@@ -22,6 +22,25 @@
     </nav>
 
 
+    <form id="contactForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="projectType">Tipo de Proyecto:</label>
+        <select id="projectType" name="projectType" required>
+            <option value="residential">Residencial</option>
+            <option value="commercial">Comercial</option>
+            <option value="landscape">Paisajismo</option>
+        </select><br><br>
+
+        <div id="additionalQuestions"></div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
     <script>
         document.getElementById('projectType').addEventListener('change', function() {
             const additionalQuestions = document.getElementById('additionalQuestions');
