@@ -23,28 +23,37 @@
 
 
     <script>
+        document.getElementById('projectType').addEventListener('change', function() {
+            const additionalQuestions = document.getElementById('additionalQuestions');
+            additionalQuestions.innerHTML = '';
 
-let vehiculo1 = prompt("Dame tu modelo de carro");
-
-let text_vehi1 = "Debes usar rines de marca x";
-let text_vehi2 = "Debes usar rines de marca y";
-let text_vehi3 = "Debes usar rines de marca z";
-
-switch (vehiculo1) {
-    case '2000':
-        alert(text_vehi1);
-        break;
-    case '2001':
-        alert(text_vehi2);
-        break;
-    case '2002':
-        alert(text_vehi3);
-        break;
-    default:
-        alert("Modelo no reconocido. Por favor, consulta con un asesor.");
-};
-
-</script>
+            if (this.value === 'residential') {
+                additionalQuestions.innerHTML += `
+                    <label for="residentialType">Tipo de Residencia:</label>
+                    <select id="residentialType" name="residentialType" required>
+                        <option value="house">Casa</option>
+                        <option value="apartment">Apartamento</option>
+                    </select><br><br>
+                `;
+            } else if (this.value === 'commercial') {
+                additionalQuestions.innerHTML += `
+                    <label for="commercialType">Tipo de Comercio:</label>
+                    <select id="commercialType" name="commercialType" required>
+                        <option value="office">Oficina</option>
+                        <option value="retail">Tienda</option>
+                    </select><br><br>
+                `;
+            } else if (this.value === 'landscape') {
+                additionalQuestions.innerHTML += `
+                    <label for="landscapeType">Tipo de Paisajismo:</label>
+                    <select id="landscapeType" name="landscapeType" required>
+                        <option value="garden">Jardín</option>
+                        <option value="park">Parque</option>
+                    </select><br><br>
+                `;
+            }
+        });
+    </script>
     
     <main>
         <section id="introduction">
